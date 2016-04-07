@@ -6,8 +6,9 @@ class DB{
 
 	public static function getInstance(){
 		if(!self::$instance){
-      $config = parse_ini_file('../../Assets/mysqliConfig.ini');
-			self::$instance = new mysqli($config['host'], $config['user'], $config['password'], $config['database']);
+      /* $config = parse_ini_file('../Assets/mysqliConfig.ini'); */
+			/* self::$instance = new mysqli($config['host'], $config['user'], $config['password'], $config['database']); */
+			self::$instance = new mysqli('localhost', 'root', 'root', 'Gottfrid');
 			return self::$instance;
 		}else{
 			return self::$instance;
