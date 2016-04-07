@@ -1,5 +1,6 @@
 module.exports = function(grunt) {
-	require('load-grunt-tasks')(grunt); // npm install --save-dev load-grunt-tasks 
+	// npm install --save-dev load-grunt-tasks 
+	require('load-grunt-tasks')(grunt); 
 
 	// Project configuration.
 	grunt.initConfig({
@@ -16,17 +17,43 @@ module.exports = function(grunt) {
 		},
 		copy : {
 			main : {
-				files : [
-					{
-						expand : true,
-						cwd    : 'src',
-						src    : ['index.php', 'Scripts', 'Classes', 'Templates'],
-						dest   : 'build/',
-					}
-				]
+				files : [{
+					expand : true,
+					cwd    : 'src',
+					src    : ['index.php', 'Classes', 'Templates'],
+					dest   : 'build/',
+				} ]
 			}
+		},
+		uglify: {
+			options: {
+				banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+			},
+			build: {
+				src: 'src/Scripts/*.js',
+				dest: 'build/'
+			}
+		},
+		watch: {
+			css: {
+				files: ['src/Stylesheets/*.scss'],
+				tasks: ['sass'],
+				options: { spawn: false }
+			},
+			php: {
+				files: ['src/*.php', 'src/Templates/*.php', 'src/Classes/*.php'],
+				tasks: ['copy'],
+				options: { spawn: false }
+			},
+			js: {
+				files: ['src/Scripts/*.js'],
+				tasks: ['uglify'],
+				options: { spawn: false }
+			} 
 		}
 	});
 
-	grunt.registerTask('default', ['sass', 'copy']);
+	grunt.loadNpmTasks('grunt-contrib-uglify');
+
+	grunt.registerTask('default', ['watch']);
 };
