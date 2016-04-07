@@ -1,0 +1,14 @@
+{
+  "name": "inl3",
+  "version": "1.0.0",
+  "description": "A school assignment",
+  "main": "index.php",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "rickisen",
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "grunt": "^1.0.1"
+  }
+}
