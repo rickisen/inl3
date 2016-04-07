@@ -67,3 +67,7 @@ jspm_packages
 
 ### Files and Folders ### 
 build/
+mysqliConfig.ini
+adminer.php
+adminer.css
+
