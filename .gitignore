@@ -61,3 +61,9 @@ jspm_packages
 ### Vagrant ###
 .vagrant/
 
+### Sass ###
+.sass-cache/
+*.css.map
+
+### Files and Folders ### 
+build/
