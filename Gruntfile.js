@@ -15,6 +15,20 @@ module.exports = function(grunt) {
 				}
 			}
 		},
+
+		postcss: {
+			options: {
+				map:false,
+				processors: [
+					require('autoprefixer')({browsers:'last 2 versions'}),
+					require('cssnano')()
+				]
+			},
+			dist: {
+				src:'build/Stylesheets/*.css'
+			}
+		},
+
 		copy : {
 			main : {
 				files : [{
@@ -25,29 +39,59 @@ module.exports = function(grunt) {
 				} ]
 			}
 		},
+
 		uglify: {
 			options: {
-				banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+				banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n',
+				beatutify:false,
+				preserveComments:false,
+				quoteStyle:1
 			},
 			build: {
-				src: 'src/Scripts/*.js',
-				dest: 'build/'
+				expand:true,
+				flatten:true,
+				src: 'build/Scripts/concat.js',
+				dest: 'build/Scripts/',
+				rename: function(destPath, destBase){ 
+					// return destPath + destBase.replace('.js', '.min.js'); 
+					return destPath + 'main.min.js'; 
+				}
 			}
 		},
+
+		concat : {
+			options: {
+				separator: '\n'
+			},
+			dist:{
+				src:['src/Scripts/*.js'],
+				dest:'build/Scripts/concat.js'
+			}
+		},
+
+		jscs : {
+			src: 'src/Scripts/*.js',
+			options: {
+				'preset':'google'
+			}
+		},
+
 		watch: {
 			css: {
 				files: ['src/Stylesheets/*.scss'],
-				tasks: ['sass'],
+				tasks: ['sass', 'postcss'],
 				options: { spawn: false }
 			},
+
 			php: {
 				files: ['src/*.php', 'src/Templates/*.php', 'src/Classes/*.php'],
 				tasks: ['copy'],
 				options: { spawn: false }
 			},
+
 			js: {
 				files: ['src/Scripts/*.js'],
-				tasks: ['uglify'],
+				tasks: ['concat'],
 				options: { spawn: false }
 			} 
 		}
@@ -56,5 +100,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 
 	grunt.registerTask('default', ['watch']);
-	grunt.registerTask('build', ['sass', 'copy', 'uglify']);
+	grunt.registerTask('build', ['sass', 'concat', 'postcss']);
+	grunt.registerTask('deploy', ['sass', 'copy', 'postcss', 'jscs', 'concat', 'uglify']);
 };
