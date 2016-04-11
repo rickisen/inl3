@@ -6,10 +6,10 @@ class API{
   private function __clone(){}
 
   public static function handleCall($path){
-    $method = $_SERVER['REQUEST_METHOD'];
-    $allowedResources = ['Munks', 'Sections']; 
-    $urlType = array_shift($path); // should be 'api'
-    $collection = array_shift($path); 
+    $method           = $_SERVER['REQUEST_METHOD'];
+    $allowedResources = ['Munks', 'Sections'];
+    $urlType          = array_shift($path); // should be 'api'
+    $collection       = array_shift($path);
 
     if ( in_array($collection, $allowedResources) ) {
       require_once 'Classes/'.$collection.".class.php" ;
