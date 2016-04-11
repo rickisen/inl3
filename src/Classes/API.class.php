@@ -7,7 +7,7 @@ class API{
 
   public static function handleCall($path){
     $method = $_SERVER['REQUEST_METHOD'];
-    $allowedResources = ['Munks']; 
+    $allowedResources = ['Munks', 'Sections']; 
     $urlType = array_shift($path); // should be 'api'
     $collection = array_shift($path); 
 
