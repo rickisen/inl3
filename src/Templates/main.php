@@ -1,6 +1,6 @@
     <main role="main">
       <article>
-        <header></header>
+          <h2></h2>
         <section>
           <h3></h3>
           <p></p>
