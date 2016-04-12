@@ -7,11 +7,12 @@ class API{
 
   public static function handleCall($path = array()){
     $method           = $_SERVER['REQUEST_METHOD'];
-    $allowedResources = ['munk', 'section'];
+    /* $allowedResources = ['munk', 'section']; */
     $urlType          = array_shift($path); // should be 'api'
     $collection       = $path[0];
 
-    if ( in_array($collection, $allowedResources) ) {
+    /* if ( in_array($collection, $allowedResources) ) { */
+    if (true) {
       require_once 'Classes/Collection.class.php' ;
       $collectionObject = new Collection($path); 
       return $collectionObject->$method(); 
