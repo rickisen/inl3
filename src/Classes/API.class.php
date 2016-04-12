@@ -5,20 +5,18 @@ class API{
   private function __construct(){}
   private function __clone(){}
 
-  public static function handleCall($path){
+  public static function handleCall($path = array()){
     $method           = $_SERVER['REQUEST_METHOD'];
-    $allowedResources = ['Munks', 'Sections'];
+    $allowedResources = ['munk', 'section'];
     $urlType          = array_shift($path); // should be 'api'
-    $collection       = array_shift($path);
+    $collection       = $path[0];
 
     if ( in_array($collection, $allowedResources) ) {
-      require_once 'Classes/'.$collection.".class.php" ;
-      $collectionObject = new $collection(); 
-
-      return $collectionObject->$method($path); 
+      require_once 'Classes/Collection.class.php' ;
+      $collectionObject = new Collection($path); 
+      return $collectionObject->$method(); 
     } else {
-      header("HTTP/1.1 404 Not Found");
-      die;
+      throw new RuntimeException('Collection not allowed'); 
     }
   }
 
