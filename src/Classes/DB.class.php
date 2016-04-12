@@ -9,6 +9,7 @@ class DB{
 		if(!self::$instance){
       $config = parse_ini_file('../Assets/mysqliConfig.ini');
 			self::$instance = new mysqli($config['host'], $config['user'], $config['password'], $config['database']);
+      self::$instance->set_charset("utf8"); 
 			return self::$instance;
 		}else{
 			return self::$instance;
