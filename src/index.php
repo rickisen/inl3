@@ -22,7 +22,13 @@ if ( URL::getUrlParts()[0] == 'api' ){
     }
 } else {
   // Render the page from php templates
-  $data = ['loadview' => 'main']; // placeholder
+  if (URL::getUrlParts()){
+    $url = URL::getUrlParts(); 
+    $loadview = array_shift($url); 
+    $data = ['loadview' => $loadview]; 
+  } else {
+    $data = ['loadview' => 'main']; 
+  }
   require_once("Classes/TemplateRenderer.class.php"); 
   TemplateRenderer::render($data);
 }
