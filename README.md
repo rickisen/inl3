@@ -1,5 +1,7 @@
 # Inl3
-just a school assignment, please ignore
+A school assignment.
+
+And an attempt at creating a pretty dynamic restfull api store/cms platform.
 
 # Install
 	git clone https://github.com/rickisen/inl3
