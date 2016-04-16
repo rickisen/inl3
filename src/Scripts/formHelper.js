@@ -25,7 +25,7 @@ function addNewProductSection(event) {
 	// itterate that section's product index
 	var newProductIndex = Number(newSection.attr('product_index')) + 1; 
 	newSection.attr('product_index', newProductIndex); 
-	newSection.find('select').attr('name', 'products[' + newProductIndex + '][name]'); 
+	newSection.find('select').attr('name', 'products[' + newProductIndex + '][id]'); 
 	newSection.find('input').attr('name', 'products[' + newProductIndex + '][ammount]'); 
 	newSection.change(updateProductInfo); 
 }

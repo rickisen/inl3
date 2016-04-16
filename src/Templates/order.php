@@ -14,7 +14,7 @@
 
               <section product_index="0">
                 <label>Munk:</label>
-                <select name="products[0][name]">
+                <select name="products[0][id]">
                   <!-- Fyll i med php! -->
                 </select>
                 <label>Antal</label>
@@ -25,14 +25,11 @@
               <div id="newProductSection"> + </div> <!-- button instead? -->
             </fieldset>
 
-            <label for="firstname">Förnamn</label>
-            <input type="text" name="firstname" value="" id="firstname">
-
-            <label for="lastname">Efternamn</label>
-            <input type="text" name="lastname" value="" id="lastname">
+            <label for="name">Namn</label>
+            <input type="text" name="name" id="name">
 
             <label for="deadline">Klar till</label>
-            <input type="date" name="deadline" value="" id="deadline">
+            <input type="date" name="deadline" placeholder="mm/dd/yyy" id="deadline">
           
             <p id="price_total">Totalt Pris:</p>
             <p><input type="submit" value="Skicka Beställning →"></p>
