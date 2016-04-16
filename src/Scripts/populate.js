@@ -3,7 +3,7 @@
 var main = document.getElementsByTagName('main')[0];
 var currentCollection = "";
 
-loadNav();
+// loadNav();
 
 function loadNav() {
 	$.getJSON('/?/api/section', populateNav); 
