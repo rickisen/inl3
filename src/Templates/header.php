@@ -11,7 +11,10 @@
       <h1></h1>
       <nav>
         <ul>
-          <li></li>
+          <li><a href="/?/about">Om Oss</a></li>
+          <li><a href="/?/products">Munkar</a></li>
+          <li><a href="/?/order">Betsäll</a></li>
+          <li><a href="/?/contact">Kontakt</a></li>
         </ul>
       </nav>
     </header>
