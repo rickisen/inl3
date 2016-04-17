@@ -27,7 +27,7 @@ Sprint
 	Add unecisarry sass stuff.		1h	1h
 	Align form better. 			1h	1h
 	Make pretty timeplan			30min
-	Fix indent the way she likes it. 	30min
+	Fix indent the way she likes it. 	30min 	30min
 	Comment stuff. 				30min
 	Add more munks.				30min
 	pack everything up 			10min 
