@@ -10,21 +10,21 @@ $darkWhite:rgb(200, 200, 200);
 $mainWidth:63em;
 
 @mixin mainSizing {
-	margin:0 auto;
-	width:$mainWidth; 
+    margin:0 auto;
+    width:$mainWidth; 
 }
 
 @mixin dropshadow {
-	box-shadow: 0  0.3em 1em rgba(0, 0, 0, 0.7);
+    box-shadow: 0  0.3em 1em rgba(0, 0, 0, 0.7);
 }
 
 @mixin coloredDiv {
-	background-color:$blue;
-	color: $white;
-	a{
-		text-decoration: none;
-		color: $white;
-	}
+    background-color:$blue;
+    color: $white;
+    a{
+        text-decoration: none;
+        color: $white;
+    }
 }
 
 // $wrapperWidth: 1024 - ($padding * 2);
@@ -40,33 +40,33 @@ $mainWidth:63em;
 // }
 
 @mixin stripedLi($baseColor){
-	li:nth-child(2n-1){
-		background-color:lighten($baseColor, 15);
-	}
-	li:nth-child(2n+0){
-		background-color:lighten($baseColor, 8);
-	}
+    li:nth-child(2n-1){
+        background-color:lighten($baseColor, 15);
+    }
+    li:nth-child(2n+0){
+        background-color:lighten($baseColor, 8);
+    }
 }
 
 // only used to fufill assignment criteria, I want to use the one above instead.
 @mixin stripedLiDos($baseColor){
-	@for $i from 1 through 4 {
-		@if $i == 1 {
-			li:nth-child(#{$i}) {
-				background-color:lighten($baseColor, 15);
-			}
-		} @else if $i == 2 {
-			li:nth-child(#{$i}) {
-				background-color:lighten($baseColor, 8);
-			}
-		} @else if $i == 3 {
-			li:nth-child(#{$i}) {
-				background-color:lighten($baseColor, 15);
-			}
-		} @else if $i == 4 {
-			li:nth-child(#{$i}) {
-				background-color:lighten($baseColor, 8);
-			}
-		}
-	}
+    @for $i from 1 through 4 {
+        @if $i == 1 {
+            li:nth-child(#{$i}) {
+                background-color:lighten($baseColor, 15);
+            }
+        } @else if $i == 2 {
+            li:nth-child(#{$i}) {
+                background-color:lighten($baseColor, 8);
+            }
+        } @else if $i == 3 {
+            li:nth-child(#{$i}) {
+                background-color:lighten($baseColor, 15);
+            }
+        } @else if $i == 4 {
+            li:nth-child(#{$i}) {
+                background-color:lighten($baseColor, 8);
+            }
+        }
+    }
 }

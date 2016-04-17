@@ -1,46 +1,46 @@
-    <main view="order" role="main">
-      <article>
-          <h2>Beställ Munkar</h2>
+<main view="order" role="main">
+<article>
+    <h2>Beställ Munkar</h2>
 
-          <p>
-            Här kan du beställa Munkar du 
-            vill hämta i affären vid ett specifikt tillfälle.
-          </p>
+    <p>
+    Här kan du beställa Munkar du 
+    vill hämta i affären vid ett specifikt tillfälle.
+    </p>
 
-          <form action="/?/api/orders/" method="post" accept-charset="utf-8">
+    <form action="/?/api/orders/" method="post" accept-charset="utf-8">
 
-            <fieldset id="products">
-              <legend>Munkar</legend>
+        <fieldset id="products">
+            <legend>Munkar</legend>
 
-              <section product_index="0">
+            <section product_index="0">
                 <label>Munk:</label>
                 <select name="products[0][id]">
-                  <!-- Fyll i med php! -->
+                    <!-- Fyll i med php! -->
                 </select>
                 <label>Antal</label>
                 <input type="number" name="products[0][ammount]" value="1">
                 <span class="price">Pris:</span>
-              </section>
+            </section>
 
-              <div id="newProductSection"> + </div> <!-- button instead? -->
-            </fieldset>
+            <div id="newProductSection"> + </div> <!-- button instead? -->
+        </fieldset>
 
-            <p>
-              <label for="name">Namn</label>
-              <input type="text" name="name" id="name">
-            </p>
+        <p>
+        <label for="name">Namn</label>
+        <input type="text" name="name" id="name">
+        </p>
 
-            <p>
-              <label for="deadline">Klar till</label>
-              <input type="date" name="deadline" placeholder="mm/dd/yyy" id="deadline">
-            </p>
-          
-            <p id="price_total">Totalt Pris:</p>
+        <p>
+        <label for="deadline">Klar till</label>
+        <input type="date" name="deadline" placeholder="mm/dd/yyy" id="deadline">
+        </p>
 
-            <p>
-              <input type="submit" value="Skicka Beställning →">
-            </p>
+        <p id="price_total">Totalt Pris:</p>
 
-          </form>
-      </article>
-    </main>
+        <p>
+        <input type="submit" value="Skicka Beställning →">
+        </p>
+
+    </form>
+</article>
+</main>
