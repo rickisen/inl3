@@ -1,0 +1,23 @@
+pink:
+	https://www.colourbox.com/preview/11344063-pink-donut-isolated-on-white-background.jpg
+
+blue:
+	http://previews.123rf.com/images/gitusik/gitusik1012/gitusik101200027/8496423-Donut-on-a-white-background-with-blue-glaze--Stock-Photo.jpg
+
+green: 
+	http://bokusuperfood.com/wp-content/uploads/2014/10/bigstock-sweet-bright-donut-on-wooden-b-59034383.jpg
+
+chockld
+	http://www.withsprinklesontop.net/wp-content/uploads/2012/01/DSC_0406x900.jpg
+
+white 
+	https://pixabay.com/static/uploads/photo/2014/11/08/16/27/donut-522431_960_720.jpg
+
+bacon:
+	http://www.chicagonow.com/tween-us/files/2014/08/140801_em_sharkweek_donut.jpg
+
+yellow:
+	https://satyastithi.files.wordpress.com/2013/05/yellow-jello.jpg
+
+BG:
+	http://data.whicdn.com/images/47735376/original.jpg
