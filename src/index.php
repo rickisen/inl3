@@ -15,9 +15,9 @@ if ( URL::getUrlParts()[0] == 'api' ){
     } else {
       throw new RuntimeException("Empty response"); 
     }
-  } catch ( RuntimeException $e ) {
+  } catch ( RuntimeException $error ) {
       header("HTTP/1.1 404 Not Found");
-      echo $e->getMessage(); 
+      echo $error->getMessage(); 
       die;
     }
 } else {
@@ -27,7 +27,7 @@ if ( URL::getUrlParts()[0] == 'api' ){
     $loadview = array_shift($url); 
     $data = ['loadview' => $loadview]; 
   } else {
-    $data = ['loadview' => 'main']; 
+    $data = ['loadview' => 'about']; 
   }
   require_once("Classes/TemplateRenderer.class.php"); 
   TemplateRenderer::render($data);

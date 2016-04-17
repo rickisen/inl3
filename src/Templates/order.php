@@ -1,4 +1,4 @@
-    <main role="main">
+    <main view="order" role="main">
       <article>
           <h2>Beställ Munkar</h2>
 
@@ -25,14 +25,22 @@
               <div id="newProductSection"> + </div> <!-- button instead? -->
             </fieldset>
 
-            <label for="name">Namn</label>
-            <input type="text" name="name" id="name">
+            <p>
+              <label for="name">Namn</label>
+              <input type="text" name="name" id="name">
+            </p>
 
-            <label for="deadline">Klar till</label>
-            <input type="date" name="deadline" placeholder="mm/dd/yyy" id="deadline">
+            <p>
+              <label for="deadline">Klar till</label>
+              <input type="date" name="deadline" placeholder="mm/dd/yyy" id="deadline">
+            </p>
           
             <p id="price_total">Totalt Pris:</p>
-            <p><input type="submit" value="Skicka Beställning →"></p>
+
+            <p>
+              <input type="submit" value="Skicka Beställning →">
+            </p>
+
           </form>
       </article>
     </main>

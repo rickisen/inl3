@@ -5,7 +5,7 @@ require_once 'Classes/Element.class.php';
 class Collection{
   private $name; 
   private $path; 
-  private $elementList = array(array());
+  private $elementList = array();
   private $childElement; 
 
   function __construct($path, $parent = null){
@@ -15,16 +15,28 @@ class Collection{
     $database     = DB::getInstance();
     $cleanTable   = $database->real_escape_string($this->name);
 
-    $result = $database->query('
-        SELECT id, title
-        FROM '.$cleanTable.'
-    ');
+    if ($cleanTable == 'munk') {
+      $query = '
+          SELECT id, title, description
+          FROM '.$cleanTable.'
+        '; 
+    } else {
+      $query = '
+          SELECT id, title
+          FROM '.$cleanTable.'
+        '; 
 
+    }
+
+    $result = $database->query($query);
+
+    $index = 0;
     if ( $result && $result->num_rows > 0 ){
       while ( $row = $result->fetch_assoc() ){
         foreach ( $row as $keyName => $col ) {
-          $this->elementList[$row['id']][$keyName] = $col;
+          $this->elementList[$index][$keyName] = $col;
         }
+        $index++; 
       }
     } elseif ( $error = $database->error ) {
       throw new RuntimeException($error); 
