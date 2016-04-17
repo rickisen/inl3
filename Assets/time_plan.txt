@@ -1,0 +1,33 @@
+Eperiment with restfull API.
+	build php backend Api 
+	build a "populating" js script
+	find and utilize a markdown rendering javascript lib
+Populate DB with relevant data.
+	products
+	pages, posts in markdown
+Write sass code 
+	basic layout
+	Make responsive
+find nice images 1h
+
+---- 
+Restructure
+	Only get products from api. Not sections or pages
+	Write temlates for displaying sections in header
+	Template for different views
+		Contact form, aobut us, find	2h	2h
+		Order form. and handle order 	3h	4h
+		Product listings 		2h 	1h
+		Single product 			30min 	3min
+		
+----- 
+Sprint
+	Fix api empty array bug. 		2h 	1h
+	Fix js bug in form. 			1h	1h
+	Add unecisarry sass stuff.		1h	1h
+	Align form better. 			1h	1h
+	Make pretty timeplan			30min
+	Fix indent the way she likes it. 	30min
+	Comment stuff. 				30min
+	Add more munks.				30min
+	pack everything up 			10min 
