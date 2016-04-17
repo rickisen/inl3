@@ -1,0 +1,72 @@
+$debugging: false;
+
+// color theme: 
+$blue:rgba(50, 153, 187, 0.9);
+$orange:rgb(255, 153, 0);
+$grey:rgb(66, 66, 66);
+$white:rgb(233, 233, 233);
+$lightGrey:rgb(188, 188, 188);
+$darkWhite:rgb(200, 200, 200);
+$mainWidth:63em;
+
+@mixin mainSizing {
+	margin:0 auto;
+	width:$mainWidth; 
+}
+
+@mixin dropshadow {
+	box-shadow: 0  0.3em 1em rgba(0, 0, 0, 0.7);
+}
+
+@mixin coloredDiv {
+	background-color:$blue;
+	color: $white;
+	a{
+		text-decoration: none;
+		color: $white;
+	}
+}
+
+// $wrapperWidth: 1024 - ($padding * 2);
+// .startsida {
+// 	@for $i from 1 through 3 {
+// 		.puff:nth-child(#{$i}) {
+// 			/*@include border-radius($i * 40px);
+// 			border: 3px solid yellow;
+// 			height: $i * 40px;*/
+// 			background-color: lighten(blue, $i * 0.9);
+// 		}
+// 	}
+// }
+
+@mixin stripedLi($baseColor){
+	li:nth-child(2n-1){
+		background-color:lighten($baseColor, 15);
+	}
+	li:nth-child(2n+0){
+		background-color:lighten($baseColor, 8);
+	}
+}
+
+// only used to fufill assignment criteria, I want to use the one above instead.
+@mixin stripedLiDos($baseColor){
+	@for $i from 1 through 4 {
+		@if $i == 1 {
+			li:nth-child(#{$i}) {
+				background-color:lighten($baseColor, 15);
+			}
+		} @else if $i == 2 {
+			li:nth-child(#{$i}) {
+				background-color:lighten($baseColor, 8);
+			}
+		} @else if $i == 3 {
+			li:nth-child(#{$i}) {
+				background-color:lighten($baseColor, 15);
+			}
+		} @else if $i == 4 {
+			li:nth-child(#{$i}) {
+				background-color:lighten($baseColor, 8);
+			}
+		}
+	}
+}

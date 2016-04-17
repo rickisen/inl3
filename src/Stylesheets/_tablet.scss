@@ -1,0 +1,36 @@
+body {
+	> header {
+		h1 {
+			margin:2.5vh 1em;
+		}
+
+		ul {
+			margin:0;
+			padding:0 1em;
+			li {
+				// background-color:$blue!important;
+				display:inline-block;
+				a {
+				}
+			}
+		}
+
+		// since the stripedLi mixin adds a psudoclass to the li, we need imortant
+		nav, ul, ul li{
+			background-color:lighten($blue, 10)!important;
+		}
+	}
+
+	> main {
+		article {
+			form {
+				> p label, > p input, > p {
+					text-align:left;
+					width:auto;
+				}
+			}
+		}
+	}
+	> footer {
+	}
+}

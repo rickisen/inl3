@@ -1,0 +1,107 @@
+body {
+	background-color:$white;
+
+	> header {
+		@include coloredDiv; 
+		overflow: hidden;
+		text-align: center;
+		h1 {
+			margin:0;
+			padding:0;
+		}
+		ul {
+			list-style-type:none;
+			margin:0;
+			padding:0;
+			@include stripedLiDos($blue);
+			li {
+				a {
+					display: block;
+					padding: .5em .5em;
+				}
+
+				// kinda pointless with a hover on tablet
+				// but maybe someone resized their desktop window... 
+				a:hover {
+					background-color:darken($blue, 10);
+				}
+			}
+		}
+	}
+
+	> main {
+		min-height:95vh;
+		color:$grey;
+		background-color:$white;
+		padding:10px;
+		article {
+			margin:10px;
+			padding:10px;
+
+			.imageDiv {
+				background-color:rgb(50,50,50);
+				background-size:cover;
+				background-repeat:no-repeat;
+				background-position:center;
+				// background-attachment:fixed;
+				min-height:40vh;
+			}
+
+			form {
+				#newProductSection {
+					font-size:2em;
+				}
+
+				select,option,input,textarea {
+					background-color:white;
+					color:$grey;
+					height:1.4em;
+					border:1px solid $grey;
+					border-radius:2px;
+				}
+
+				section * {
+					// just because we had 
+					// to have a size 
+					// calculation in assignment
+					min-width:($mainWidth / 15);  
+					max-width:($mainWidth / 7);  
+					display:inline-block;
+				}
+
+				textarea {
+					height:auto;
+				}
+
+				fieldset input {
+					width:2.5em;
+				}
+				
+				> p label, > p input, > p {
+					text-align:center;
+					display:block;
+					width:100%;
+				}
+			}
+		}
+	}
+
+	> footer {
+		background-color:$darkWhite;
+		@include dropshadow;
+		min-height:15vh;
+		border-top:1px solid $lightGrey;
+
+		.contactList{
+			list-style-type:none;
+			color:white;
+			float:left;
+		}
+		
+		.contactListOther{
+			// this is written like this just to fufill an
+			// assignment criteria
+			@extend .contactList;
+		}
+	} 
+}

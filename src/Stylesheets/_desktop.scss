@@ -1,0 +1,31 @@
+body {
+	background-image:url('http://data.whicdn.com/images/47735376/original.jpg');
+	background-size:cover;
+	background-repeat:no-repeat;
+	background-position:center;
+	background-attachment:fixed;
+	
+	> header {
+		ul {
+			li {
+			}
+		}
+		nav {
+			@include mainSizing;
+		}
+	}
+
+	> main {
+		@include mainSizing;
+		padding:1em 0;
+
+		article {
+			margin:10px;
+			padding:10px;
+		}
+	}
+
+	> footer {
+	}
+}
+
